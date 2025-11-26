@@ -55,7 +55,7 @@ try {
         body:JSON.stringify(formData),
         headers:{
             "Content-Type":"application/json",
-          "Authorization":`Bearer ${token}`
+          "authorization":`Bearer ${token}`
         }
     })
     const data = await res.json()
