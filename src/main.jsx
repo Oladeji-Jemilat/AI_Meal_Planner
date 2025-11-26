@@ -9,3 +9,6 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
+
+//https://vercel.com/jemilats-projects/ai-meal-planner
+//To https://github.com/Oladeji-Jemilat/AI_Meal_Planner.git

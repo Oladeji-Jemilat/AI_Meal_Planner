@@ -91,8 +91,10 @@ try {
             <div  className="form-list">
                <button>Submit</button>
             </div>
-            <div>
-            <Link to="/login" className="form-link">Have an account? <span className="form-link-item">Sing In</span></Link>
+            <div className="links-btn">
+            <Link to="/login" className="form-link">Have an account? <span className="form-link-item">Sing In</span></Link> <span>|</span>
+            <Link to="/" className="form-link" ><span className="form-link-item">Home</span></Link>
+
             </div>
         </div>
        

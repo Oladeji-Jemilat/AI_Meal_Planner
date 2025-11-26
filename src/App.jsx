@@ -8,6 +8,7 @@ import Dashboard from './components/pages/dashboard/Dashboard'
 
 
 import { Toaster } from 'sonner'
+import UpdateProfile from './components/pages/dashboard/UpdateProfile'
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
     <Route path='/signup' element={<SignupForm/>}/>
     <Route path='/verify/:token' element={<VerifyAccount/>}/>
     <Route path='/dashboard/*' element={<Dashboard/>}/>
+    <Route path='/updateprofile' element={<UpdateProfile/>}/>
+
   </Routes>
   </BrowserRouter>
   

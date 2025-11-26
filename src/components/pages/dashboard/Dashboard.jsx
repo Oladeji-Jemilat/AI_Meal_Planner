@@ -10,7 +10,7 @@ const Dashboard = () => {
   return (
     <div className='dashboard-con'>
           <div className='dashboard-nav'>
-            <div className="dashboard-list"> <h3>My Dashboard</h3>
+          <div className="dashboard-list"> <h3>My Dashboard</h3>
         <div>
             <span>User</span>
             <span>IM</span>
@@ -20,6 +20,7 @@ const Dashboard = () => {
         <Link to="/" className='aside-link'>Home</Link>
         <Link to="/dashboard/" className='aside-link'>Dashboard</Link>
         <Link to="/dashboard/profile" className='aside-link'>Profile</Link>
+        <Link to="/updateprofile" className='aside-link'>Update Profile</Link>
         <LogoutButton/>
         </aside>
 

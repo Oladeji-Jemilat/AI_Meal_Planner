@@ -1,9 +1,9 @@
-import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Profile = () => {
   return (
     <div>
-        <h3>Your Profile</h3>
+    <h1>Profile</h1>
+    <Link to="/profile/updateprofile"><button>Update Profile</button></Link>
     </div>
   )
 }
