@@ -17,7 +17,7 @@ const updateProfileSchema = yup.object({
         age:yup.string().required("age is required"),
         weight:yup.string().required("weight is required"),
         height:yup.string().required("height is required"),
-        gender:yup.string().required("gender must be female or male"),
+        gender:yup.string().oneOf(["male", "female"], "gender must be either 'male' or 'female'").required("Gender is required"),
         dietPreference:yup.string().required("diet Preference is required"),
         goal:yup.string().required("goal is required"),
         timePerDay:yup.string().required("time is required")
@@ -55,12 +55,14 @@ try {
         body:JSON.stringify(formData),
         headers:{
             "Content-Type":"application/json",
-            "authorization":`Bearer ${localStorage.getItem("Token")} `
+            "Authorization":`Bearer ${localStorage.getItem("Token")}`
         }
     })
     const data = await res.json()
     if(res.status === 200){
         toast.success (data.message || "Profile Updated successfully!")
+    }else{
+        toast.error(data.message || "unable to update profile")
     }
 } catch (error) {
     console.log(error);
@@ -84,12 +86,12 @@ try {
             </div>        
              <div className="form-list">
                 <label htmlFor="age">Age</label>
-                <input type="text" name="age" id="age" {...register("age")}/>
+                <input type="number" name="age" id="age" {...register("age")}/>
                {errors.age && <p className="error-message">{errors.age.message}</p>}
             </div>    
             <div className="form-list">
                 <label htmlFor="weight">Weight</label>
-                <input type="text" name="weight" id="weight" {...register("weight")}/>
+                <input type="number" name="weight" id="weight" {...register("weight")}/>
 
                {errors.weight && <p className="error-message">{errors.weight.message}</p>}
                 
@@ -97,7 +99,7 @@ try {
 
             <div className="form-list">
                 <label htmlFor="height">Height(CM)</label>
-                <input type="text" name="height" id="height" {...register("height")}/>
+                <input type="number" name="height" id="height" {...register("height")}/>
                 {errors.height && <p className="error-message">{errors.height.message}</p>}
             </div>
             <div className="form-list">
@@ -125,11 +127,11 @@ try {
             </div>
             <div className="form-list">
                 <label htmlFor="timePerDay">Time Per Day(MINUTES)</label>
-                <input type="number" name="timePerDay" id="timePerDay" {...register("timePerDay")}/>
+                <input type="text" name="timePerDay" id="timePerDay" {...register ("timePerDay")}/>
                {errors.timePerDay && <p className="error-message">{errors.timePerDay.message}</p>}
             </div>    
             <div  className="form-list">
-               <button>Submit</button>
+               <button disabled={submitting}>{submitting? "Updating.." : "Submit"}</button>
             </div>
             <div>
             <Link to="/Dashboard"> <span className="form-link-item">Back</span></Link>
@@ -137,6 +139,7 @@ try {
         </div>
        
 </form>
+
    )
 }
 
