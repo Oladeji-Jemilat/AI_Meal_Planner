@@ -44,7 +44,7 @@ const UpdateProfile =()=>{
 //     setShowPass((prev) => !prev)
 //    }
 
-
+const token = localStorage.getItem("Token")
 const onSubmit = async (formData)=>{
     console.log(formData);
     
@@ -55,7 +55,7 @@ try {
         body:JSON.stringify(formData),
         headers:{
             "Content-Type":"application/json",
-            "Authorization":`Bearer ${localStorage.getItem("Token")}`
+            authorization:`Bearer ${token}`
         }
     })
     const data = await res.json()
