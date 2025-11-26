@@ -55,7 +55,7 @@ try {
         body:JSON.stringify(formData),
         headers:{
             "Content-Type":"application/json",
-            authorization:`Bearer ${token}`
+          "Authorization":`Bearer ${token}`
         }
     })
     const data = await res.json()
@@ -63,6 +63,7 @@ try {
         toast.success (data.message || "Profile Updated successfully!")
     }else{
         toast.error(data.message || "unable to update profile")
+        
     }
 } catch (error) {
     console.log(error);
