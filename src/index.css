@@ -484,3 +484,24 @@ background-color: var(--primary-color);
   cursor: pointer;
   font-size: var(--medium-font);
 }
+
+
+/* profile */
+.user-details{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid green ;
+  padding: 1.5rem;
+}
+.user-details-1{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.user-details-2{
+  display: flex;
+  justify-content: space-between;
+}
+

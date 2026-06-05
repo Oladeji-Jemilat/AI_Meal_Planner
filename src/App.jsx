@@ -30,7 +30,13 @@ function App() {
   </Routes>
   </BrowserRouter>
   
+<vapi-widget assistant-id="60575e58-ac9a-476b-8813-77237b34c1ac" public-key="d326fc1b-976f-42d4-a0b6-46cd93ef97be"></vapi-widget>
 
+<script
+  src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js"
+  async
+  type="text/javascript"
+></script>
   
  </div>
   )

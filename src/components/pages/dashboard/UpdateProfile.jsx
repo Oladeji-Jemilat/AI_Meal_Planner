@@ -44,7 +44,7 @@ const UpdateProfile =()=>{
 //     setShowPass((prev) => !prev)
 //    }
 
-const token = localStorage.getItem("Token")
+const token = JSON.parse(localStorage.getItem("Token"))
 const onSubmit = async (formData)=>{
     console.log(formData);
     
@@ -61,6 +61,7 @@ try {
     const data = await res.json()
     if(res.status === 200){
         toast.success (data.message || "Profile Updated successfully!")
+        navigate("/dashboard")
     }else{
         toast.error(data.message || "unable to update profile")
         

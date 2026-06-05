@@ -5,6 +5,7 @@ import LogoutButton from './Logout'
 import Profile from './Profile'
 import MyDashboard from './MyDashboard'
 import Logo from '../../Logo'
+import UpdateProfile from './UpdateProfile'
 
 const Dashboard = () => {
   return (
@@ -20,7 +21,7 @@ const Dashboard = () => {
         <Link to="/" className='aside-link'>Home</Link>
         <Link to="/dashboard/" className='aside-link'>Dashboard</Link>
         <Link to="/dashboard/profile" className='aside-link'>Profile</Link>
-        <Link to="/updateprofile" className='aside-link'>Update Profile</Link>
+        <Link to="/dashboard/updateprofile" className='aside-link'>Update Profile</Link>
         <LogoutButton/>
         </aside>
 
@@ -28,6 +29,10 @@ const Dashboard = () => {
 <Routes>
     <Route path='/' element={<MyDashboard/>}/>
     <Route path='/profile' element={<Profile/>}/>
+    <Route path='/updateprofile' element={<UpdateProfile/>}/>
+
+    
+
 </Routes>
         </div>
       </div>
