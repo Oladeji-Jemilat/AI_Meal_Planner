@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-
+import BASE_URL from "../../api"; // Adjust the path if needed
 
 //import AuthProvider, { authContext } from "../contexts/AuthContext";
 
@@ -41,7 +41,8 @@ const onSubmit = async (formData)=>{
     
 setSubmitting(true)
 try {
-    const res = await fetch (`http://localhost:3001/api/auth/signup`,{
+    // const res = await fetch (`http://localhost:3001/api/auth/signup`
+        const res = await fetch(`${BASE_URL}/api/auth/signup`, {
         method:"POST",
         body:JSON.stringify(formData),
         headers:{
