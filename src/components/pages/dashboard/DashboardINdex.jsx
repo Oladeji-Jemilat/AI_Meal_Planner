@@ -1,7 +1,7 @@
 
 import { WeeklyFitnessPlan } from "../../../components/ui/WeeklyFitnessPlan";
 
-export default function ProfilePage() {
+function ProfilePage() {
     return (
         <div className="min-h-screen bg-background">
             {/* <Header /> */}
@@ -21,3 +21,5 @@ export default function ProfilePage() {
         </div>
     )
 }
+
+export default ProfilePage

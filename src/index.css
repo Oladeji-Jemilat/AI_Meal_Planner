@@ -149,6 +149,7 @@ body{
   color: var(--secondary-color);
 }
 
+
 .btn,.get-btn{
 font-family: Manrope;
 color: var(--secondary-color);
@@ -504,4 +505,6 @@ background-color: var(--primary-color);
   display: flex;
   justify-content: space-between;
 }
+
+
 

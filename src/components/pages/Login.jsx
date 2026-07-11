@@ -45,14 +45,20 @@ const onSubmit = async (inputs)=>{
                 }
             })
             const data = await response.json()
-            
             if (response.status === 200) {
                 toast.success(data.message || "You've Logged In")
                 navigate(`/dashboard`)
             }
+            else{
+                toast.error(data.message)
+            }
+
+        
+           
             console.log(data)
             //save token to locastorage
-            localStorage.setItem("Token", JSON.stringify(data.token))
+            // localStorage.setItem("Token", JSON.stringify(data.token))
+            localStorage.setItem("jwt_token", data.token);
   
         } catch (error) {
             console.log(error)

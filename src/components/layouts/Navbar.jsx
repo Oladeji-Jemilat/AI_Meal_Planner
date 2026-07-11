@@ -10,7 +10,8 @@ const Navbar = () => {
   const [auth, setAuth]=useState(false)
   
 useEffect(()=>{
-  const token = JSON.parse(localStorage.getItem("Token"))
+  const token=localStorage.getItem("jwt_token");
+  //const token = JSON.parse(localStorage.getItem("Token"))
   if(token){
     setAuth(true)
   }else{
@@ -25,12 +26,12 @@ useEffect(()=>{
             <div className='listItems'>
              <Link to="/home" className='link'>Home</Link>
               <Link to="/contact" className='link'>Generate</Link>
-               <Link to="/about" className='link'>Profile</Link>
+               <Link to="/dashboard" className='link'>Dashboard</Link>
             </div>
         </div>
-     <div>
+     <div className='listItems'>
         {auth ? (
-          <Link to="/dashboard"><span className="listItems">You're Logged In</span></Link> // ✅ show user if logged in
+          <Link to="/dashboard" className="link"> You're Logged In</Link> // ✅ show user if logged in
         ) : (
           <Link to="/login">
             <button className="btn">Login</button>

@@ -44,7 +44,8 @@ const UpdateProfile =()=>{
 //     setShowPass((prev) => !prev)
 //    }
 
-const token = JSON.parse(localStorage.getItem("Token"))
+// const token = JSON.parse(localStorage.getItem("Token"))
+const token=localStorage.getItem("jwt_token");
 const onSubmit = async (formData)=>{
     console.log(formData);
     

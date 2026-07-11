@@ -6,7 +6,8 @@ const navigate = useNavigate()
 
 
 const handleLogout = async () => {
-const token = JSON.parse(localStorage.getItem("Token"))
+//const token = JSON.parse(localStorage.getItem("Token"))
+ const token=localStorage.getItem("jwt_token");
 console.log(token);
 if(!token){
   toast.error("session expired!")
@@ -24,7 +25,8 @@ if(!token){
  // console.log(data);
   if(response.status === 200){
     toast.error(data.message || "You've logged out")
-    localStorage.removeItem("Token");
+   // localStorage.removeItem("Token");
+   localStorage.removeItem("jwt_token")
     navigate("/login")
   } else if(response.status === 400){
     toast.error(data.message || "invalid Token")

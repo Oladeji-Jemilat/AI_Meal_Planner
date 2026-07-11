@@ -30,9 +30,10 @@ export function WeeklyFitnessPlan() {
     const [generatingPlan, setGeneratingPlan] = useState(false)
     const [fetchingPlan, setFetchingPlan] = useState(true)
     const baseUrl = import.meta.env.VITE_BASE_URL
+
     //   fetch 
 
-    console.log(fitnessPlan?.weeklyPlan[0].workout)
+    //console.log(fitnessPlan?.weeklyPlan?.[0]?.workout)
 
     useEffect(() => {
         handleFetchCurrentPlan()
@@ -71,6 +72,7 @@ export function WeeklyFitnessPlan() {
                 throw new Error(data.message)
             } else {
                 toast.success("Plan generated successfully.")
+                //navigate(`/dashboard`)
             }
             console.log(data)
         } catch (error) {

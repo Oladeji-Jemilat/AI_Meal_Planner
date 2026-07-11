@@ -29,7 +29,7 @@ const PRO_FEATURES = [
     "Weekly coaching tips",
 ]
 
-export default function SubscriptionPage() {
+function SubscriptionPage() {
     const [billingPeriod, setBillingPeriod] = useState("monthly") // <"monthly" | "quarterly" | "yearly">
     const [selectedPlan, setSelectedPlan] = useState("free") // <"free" | "pro">
     const [activating, setActivating] = useState(false)
@@ -39,23 +39,34 @@ export default function SubscriptionPage() {
 
 
     const initiateSubscription = async () => {
+        const token =localStorage.getItem("jwt_token")
         setActivating(true)
         try {
             const res = await fetch(`${baseUrl}/api/subscription/initialize`, {
                 method: "POST",
                 body: JSON.stringify({ plan: billingPeriod }),
                 headers: {
-                    authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
+                    Authorization: `Bearer ${token}`,
                     "Content-Type": "application/json"
                 }
             })
-            const data = await res.json()
-            navigate(data.data.authorization_url)
-            // console.log(data.data.authorization_url)
+            const data = await res.json();
+           console.log(data);
+
+            if (!data?.data?.authorization_url) {
+                  console.error("Subscription error:", data.message)
+                  setActivating(false)
+                    return
+                }
+          navigate(data.data.authorization_url)
+//window.location.href = data.data.authorization_url
+
+             //navigate(data.data.authorization_url)
+             //console.log(data.data.authorization_url)
         } catch (error) {
             console.log(error)
         } finally {
-            setActivating(false)
+            //setActivating(false)
         }
     }
     return (
@@ -447,3 +458,6 @@ export default function SubscriptionPage() {
         </div>
     )
 }
+
+
+export default SubscriptionPage

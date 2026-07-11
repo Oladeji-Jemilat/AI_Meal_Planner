@@ -11,7 +11,8 @@ useEffect(()=>{
   getUserInfo()
 }, [])
 
-  const token =JSON.parse(localStorage.getItem("Token"))
+  //const token =JSON.parse(localStorage.getItem("Token"))
+  const token=localStorage.getItem("jwt_token");
   const getUserInfo = async ()=>{
     try {
       const res= await fetch (`http://localhost:3001/api/user/viewprofile/${_id}`,{

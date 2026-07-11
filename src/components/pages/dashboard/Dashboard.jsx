@@ -6,6 +6,10 @@ import Profile from './Profile'
 import MyDashboard from './MyDashboard'
 import Logo from '../../Logo'
 import UpdateProfile from './UpdateProfile'
+import SubscriptionPage from './Subscription'
+import ProfilePage from './DashboardINdex'
+
+
 
 const Dashboard = () => {
   return (
@@ -22,14 +26,16 @@ const Dashboard = () => {
         <Link to="/dashboard/" className='aside-link'>Dashboard</Link>
         <Link to="/dashboard/profile" className='aside-link'>Profile</Link>
         <Link to="/dashboard/updateprofile" className='aside-link'>Update Profile</Link>
+        <Link to="/dashboard/subscription" className='aside-link'>Subscription</Link>
         <LogoutButton/>
         </aside>
 
         <div style={{ width: "80%", marginLeft: "auto", padding: "3rem" }}>
 <Routes>
-    <Route path='/' element={<MyDashboard/>}/>
+    <Route path='/' element={<ProfilePage/>}/>
     <Route path='/profile' element={<Profile/>}/>
     <Route path='/updateprofile' element={<UpdateProfile/>}/>
+    <Route path='/subscription' element={<SubscriptionPage/>}/>
 
     
 
