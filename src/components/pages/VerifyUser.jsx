@@ -15,7 +15,7 @@ const VerifyAccount = () => {
 
     const verify = async () => {
         try {
-            const res = await fetch(`http://localhost:3001/api/auth/verify/${token}`, {
+            const res = await fetch(`${import.meta.env.VITE_BASE_URL}/api/auth/verify/${token}`, {
                 method: "POST",
             })
             const data = await res.json()

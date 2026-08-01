@@ -15,7 +15,7 @@ useEffect(()=>{
   const token=localStorage.getItem("jwt_token");
   const getUserInfo = async ()=>{
     try {
-      const res= await fetch (`http://localhost:3001/api/user/viewprofile/${_id}`,{
+      const res= await fetch (`${import.meta.env.VITE_BASE_URL}/api/user/viewprofile/${_id}`,{
 method:"GET",
 headers:{
   'content-type': 'application/json',

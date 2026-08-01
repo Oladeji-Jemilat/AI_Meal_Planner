@@ -42,7 +42,7 @@ const onSubmit = async (formData)=>{
 setSubmitting(true)
 try {
     // const res = await fetch (`http://localhost:3001/api/auth/signup`
-        const res = await fetch(`${BASE_URL}/api/auth/signup`, {
+        const res = await fetch(`${import.meta.en.VITE_BASE_URL}/api/auth/signup`, {
         method:"POST",
         body:JSON.stringify(formData),
         headers:{

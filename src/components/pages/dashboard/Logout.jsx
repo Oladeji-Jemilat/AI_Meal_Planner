@@ -14,7 +14,7 @@ if(!token){
   navigate("/login")
 }
  try {
-  const response = await fetch("http://localhost:3001/api/auth/logout",{
+  const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/auth/logout`,{
   method:"POST",
   headers:{
      "Content-Type":"application/json",
