@@ -24,13 +24,15 @@ if(!token){
   const data = await response.json()
  // console.log(data);
   if(response.status === 200){
-    toast.error(data.message || "You've logged out")
+    toast.success(data.message || "You've logged out")
    // localStorage.removeItem("Token");
    localStorage.removeItem("jwt_token")
     navigate("/login")
+    return;
   } else if(response.status === 400){
     toast.error(data.message || "invalid Token")
     navigate("/login")
+    return;
   }
  } catch (error) {
   console.log(error);

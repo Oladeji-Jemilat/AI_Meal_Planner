@@ -60,7 +60,7 @@ export function WeeklyFitnessPlan() {
     const handleCreatePlan = async () => {
         setGeneratingPlan(true)
         try {
-            const res = await fetch(`${import.meta.env.VITE_BASE_URL}/api/fit-plan/create`, {
+            const res = await fetch(`${baseUrl}/api/fit-plan/create`, {
                 method: "POST",
                 headers: {
                     authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
