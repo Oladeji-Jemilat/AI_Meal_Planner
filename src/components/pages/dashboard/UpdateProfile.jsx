@@ -51,7 +51,7 @@ const onSubmit = async (formData)=>{
     
 setSubmitting(true)
 try {
-    const res = await fetch (`${import.meta.env.VITE_BASE_URL}api/user/updateuser`,{
+    const res = await fetch (`${import.meta.env.VITE_BASE_URL}/api/user/updateuser`,{
         method:"PUT",
         body:JSON.stringify(formData),
         headers:{
